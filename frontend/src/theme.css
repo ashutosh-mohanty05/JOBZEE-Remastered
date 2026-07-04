@@ -1,0 +1,260 @@
+/* =========================================================
+   JobZee — Global Theme System
+   Light-to-medium green palette, with a light/dark toggle.
+   All custom stylesheets (Auth.css, AITools.css, Home.css)
+   read colors from these variables so the whole site (and
+   the theme switcher) stays consistent from one place.
+   ========================================================= */
+
+:root {
+  color-scheme: light;
+
+  /* Brand primary — indigo (replaces green as the dominant color) */
+  --color-primary: #4f46e5;
+  --color-primary-dark: #4338ca;
+  --color-primary-darker: #1e1b4b;
+  --color-primary-light: #818cf8;
+  --color-primary-lighter: #eef0ff;
+
+  --color-accent: #4f46e5;
+  --color-accent-soft: #eef0ff;
+
+  /* Secondary brand hues — used across cards/icons/badges so the UI
+     isn't monochrome. Green is now just ONE of several accents. */
+  --color-teal: #0d9488;
+  --color-teal-soft: #d9f5f0;
+  --color-coral: #f2542d;
+  --color-coral-soft: #ffe6dd;
+  --color-purple: #8b5cf6;
+  --color-purple-soft: #ede9fe;
+  --color-amber: #d97706;
+  --color-amber-soft: #fef1d9;
+  --color-pink: #db2777;
+  --color-pink-soft: #fce7f3;
+  --color-green: #16a34a;
+  --color-green-soft: #dcfce7;
+
+  /* Surfaces — neutral, not green-tinted */
+  --color-bg: #f8fafc;
+  --color-bg-alt: #f1f5f9;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f8fafc;
+
+  /* Text */
+  --color-text: #0f172a;
+  --color-text-muted: #56637a;
+  --color-text-soft: #8896ab;
+
+  /* Borders / shadows */
+  --color-border: #e2e8f0;
+  --shadow-sm: 0 6px 18px rgba(30, 27, 75, 0.07);
+  --shadow-md: 0 16px 40px rgba(30, 27, 75, 0.1);
+  --shadow-lg: 0 26px 60px rgba(30, 27, 75, 0.14);
+
+  /* Status colors (unchanged across themes) */
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-danger: #dc2626;
+
+  --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #8b5cf6 100%);
+  --gradient-hero: linear-gradient(150deg, #1e1b4b 0%, #4338ca 45%, #8b5cf6 85%, #f2542d 130%);
+  --gradient-soft: radial-gradient(circle at top left, #eef0ff 0%, #f8fafc 45%, #fdf2f8 100%);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-primary: #818cf8;
+  --color-primary-dark: #6366f1;
+  --color-primary-darker: #0b0f2a;
+  --color-primary-light: #a5b4fc;
+  --color-primary-lighter: #1b1f3d;
+
+  --color-accent: #818cf8;
+  --color-accent-soft: #1b1f3d;
+
+  --color-teal: #2dd4bf;
+  --color-teal-soft: #0f2e2a;
+  --color-coral: #fb7250;
+  --color-coral-soft: #33170f;
+  --color-purple: #a78bfa;
+  --color-purple-soft: #241d3d;
+  --color-amber: #f5a524;
+  --color-amber-soft: #332209;
+  --color-pink: #f472b6;
+  --color-pink-soft: #331a29;
+  --color-green: #4ade80;
+  --color-green-soft: #0f2e1d;
+
+  --color-bg: #0a0e1a;
+  --color-bg-alt: #0f1424;
+  --color-surface: #131a2e;
+  --color-surface-alt: #171f36;
+
+  --color-text: #eef1f8;
+  --color-text-muted: #a3adc2;
+  --color-text-soft: #6f7a92;
+
+  --color-border: #232b45;
+  --shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.38);
+  --shadow-lg: 0 26px 60px rgba(0, 0, 0, 0.45);
+
+  --gradient-primary: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+  --gradient-hero: linear-gradient(150deg, #05060f 0%, #1e1b4b 45%, #4338ca 85%, #7c2d12 130%);
+  --gradient-soft: radial-gradient(circle at top left, #1b1f3d 0%, #171f36 45%, #241a2e 100%);
+}
+
+/* Per-card accent hooks — set data-accent="teal|coral|purple|amber|pink|green"
+   on any card to give it a distinct color without hardcoding per component. */
+[data-accent="indigo"] { --card-accent: var(--color-primary); --card-accent-soft: var(--color-primary-lighter); }
+[data-accent="teal"]   { --card-accent: var(--color-teal);    --card-accent-soft: var(--color-teal-soft); }
+[data-accent="coral"]  { --card-accent: var(--color-coral);   --card-accent-soft: var(--color-coral-soft); }
+[data-accent="purple"] { --card-accent: var(--color-purple);  --card-accent-soft: var(--color-purple-soft); }
+[data-accent="amber"]  { --card-accent: var(--color-amber);   --card-accent-soft: var(--color-amber-soft); }
+[data-accent="pink"]   { --card-accent: var(--color-pink);    --card-accent-soft: var(--color-pink-soft); }
+[data-accent="green"]  { --card-accent: var(--color-green);   --card-accent-soft: var(--color-green-soft); }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* ---------- Theme toggle button ---------- */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-primary);
+  cursor: pointer;
+  font-size: 1.05rem;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: rotate(18deg) scale(1.05);
+  border-color: var(--color-primary);
+}
+
+/* =========================================================
+   Shared animations
+   ========================================================= */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes floatY {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shimmerText {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.anim-fade-up {
+  animation: fadeInUp 0.7s ease both;
+}
+
+.anim-fade-up-delay-1 { animation-delay: 0.1s; }
+.anim-fade-up-delay-2 { animation-delay: 0.22s; }
+.anim-fade-up-delay-3 { animation-delay: 0.34s; }
+.anim-fade-up-delay-4 { animation-delay: 0.46s; }
+.anim-fade-up-delay-5 { animation-delay: 0.58s; }
+
+.anim-float {
+  animation: floatY 4.5s ease-in-out infinite;
+}
+
+.anim-shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--color-primary-light) 0%,
+    #ffffff 50%,
+    var(--color-primary-light) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmerText 3.5s linear infinite;
+}
+
+/* ---------- Rotating word text animation ---------- */
+@keyframes wordPopIn {
+  0% {
+    opacity: 0;
+    transform: translateY(55%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anim-rotating-word-wrap {
+  display: inline-block;
+  position: relative;
+  height: 1.2em;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.anim-rotating-word-item {
+  display: inline-block;
+  animation: wordPopIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  background: linear-gradient(90deg, var(--color-coral), var(--color-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-rotating-word-item {
+    animation: none;
+  }
+}

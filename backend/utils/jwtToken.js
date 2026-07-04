@@ -1,0 +1,20 @@
+export const sendToken = (user, statusCode, res, message) => {
+  const token = user.getJWTToken();
+  const options = {
+    expires: new Date(
+      Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
+    ),
+    httpOnly: true, // Set httpOnly to true
+    // Secure + SameSite=None only works over HTTPS. For local dev (http://localhost)
+    // we fall back to Lax/insecure so the login cookie actually gets set.
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
+  };
+
+  res.status(statusCode).cookie("token", token, options).json({
+    success: true,
+    user,
+    message,
+    token,
+  });
+};

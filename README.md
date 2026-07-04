@@ -1,30 +1,308 @@
-> 📘 **New: see [`SETUP_GUIDE.md`](./SETUP_GUIDE.md) for step-by-step, 100%-free local setup** (Google Sign-In, AI Resume Scanner with PDF/Word upload, AI Career Helper with 6/15/30-question quizzes, and a fully responsive UI).
+# 🚀 JobZee Remastered – AI Integrated
 
-**Tech Stack -** ReactJS,NodeJS,MongoDB,ExpressJS
+An AI-powered full-stack job portal built using the MERN stack that connects job seekers and employers with an intelligent recruitment experience.
 
+## 🌐 Live Demo
 
- **Description**
+- **Frontend:** https://jobzee-remastered.vercel.app
+- **Backend API:** https://jobzee-remastered.onrender.com
 
+---
 
-* Developed a full-stack web application using the MERN stack, facilitating job posting and application processes for both employers and job seekers.
-* Implemented user authentication and authorization features, ensuring secure access and data protection for registered users.
-* Integrated MongoDB for efficient data storage and retrieval, enabling seamless management of job listings and candidate profiles.
-* Designed and implemented responsive user interfaces using React.js, providing a seamless experience across various devices.
-* Utilized Express.js and Node.js for building robust APIs, facilitating real-time data exchange between the client and server.
+# 📖 Overview
 
+JobZee Remastered is a modern recruitment platform where employers can post jobs, manage applications, and hire candidates, while job seekers can discover jobs, apply online, and manage their applications.
 
-**Home Page**:
+The platform also integrates AI-powered features to enhance the recruitment experience.
 
-  
-![jobsite](https://github.com/ashutosh-mohanty05/job-seeking-site/assets/94921263/1c10190d-4995-4169-a8ca-9695f6e50914)
+---
 
+# ✨ Features
 
-**Authentication page**:
+## 👨‍💼 Job Seeker
 
+- User Authentication (JWT)
+- Register & Login
+- Google Authentication
+- Search Jobs
+- Apply for Jobs
+- Upload Resume
+- View Applied Jobs
+- Update Profile
+- AI Assistance
 
-  ![jobsite3](https://github.com/ashutosh-mohanty05/job-seeking-site/assets/94921263/22f97ace-a4ec-46e6-bdcb-dda6f638f1a8)
+---
 
+## 🏢 Employer
 
+- Employer Authentication
+- Post New Jobs
+- Edit/Delete Jobs
+- View Applicants
+- Manage Job Listings
+- Employer Dashboard
 
+---
 
- 
+## 🤖 AI Features
+
+- AI-powered Job Assistance
+- Resume Analysis
+- Smart Career Guidance
+- AI Chat Support
+- Intelligent Recommendations
+
+---
+
+# 🛠 Tech Stack
+
+### Frontend
+
+- React.js
+- Vite
+- Redux Toolkit
+- Axios
+- React Router
+- Tailwind CSS
+
+### Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- Cloudinary
+- Express File Upload
+
+### AI
+
+- OpenAI API / Gemini API (Configurable)
+
+### Deployment
+
+- Vercel
+- Render
+- MongoDB Atlas
+
+---
+
+# 📂 Project Structure
+
+```
+JobZee-Remastered/
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+├── backend/
+│   ├── controllers/
+│   ├── database/
+│   ├── middlewares/
+│   ├── models/
+│   ├── routes/
+│   ├── utils/
+│   ├── config/
+│   └── server.js
+│
+└── README.md
+```
+
+---
+
+# ⚙️ Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/jobzee-remastered.git
+```
+
+```
+cd jobzee-remastered
+```
+
+---
+
+## Backend Setup
+
+```
+cd backend
+npm install
+```
+
+Create `.env`
+
+```env
+PORT=4000
+
+MONGO_URI=your_mongodb_uri
+
+JWT_SECRET_KEY=your_secret
+
+JWT_EXPIRE=7d
+
+COOKIE_EXPIRE=7
+
+FRONTEND_URL=http://localhost:5173
+
+CLOUDINARY_CLOUD_NAME=
+
+CLOUDINARY_API_KEY=
+
+CLOUDINARY_API_SECRET=
+
+OPENAI_API_KEY=
+```
+
+Run backend
+
+```
+npm run dev
+```
+
+---
+
+## Frontend Setup
+
+```
+cd frontend
+npm install
+```
+
+Create `.env`
+
+```env
+VITE_API_URL=http://localhost:4000
+
+VITE_GOOGLE_CLIENT_ID=your_google_client_id
+```
+
+Run frontend
+
+```
+npm run dev
+```
+
+---
+
+# 🚀 Production Deployment
+
+### Frontend
+
+Deploy on
+
+- Vercel
+
+### Backend
+
+Deploy on
+
+- Render
+
+### Database
+
+- MongoDB Atlas
+
+---
+
+# 🔒 Authentication
+
+- JWT Authentication
+- HTTP Only Cookies
+- Protected Routes
+- Google OAuth Login
+
+---
+
+# 📸 Screenshots
+
+Add screenshots here.
+
+```
+Home Page
+
+Login
+
+Dashboard
+
+Employer Panel
+
+AI Assistant
+
+Job Listings
+```
+
+---
+
+# Future Improvements
+
+- Resume Parsing
+- AI Resume Score
+- Interview Preparation
+- Job Recommendation Engine
+- Resume Builder
+- Email Notifications
+- Chat between Employer & Candidate
+- Admin Dashboard
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork Repository
+2. Create Branch
+
+```
+git checkout -b feature-name
+```
+
+3. Commit
+
+```
+git commit -m "Added new feature"
+```
+
+4. Push
+
+```
+git push origin feature-name
+```
+
+5. Create Pull Request
+
+---
+
+# 👨‍💻 Author
+
+**Ashutosh Mohanty**
+
+AWS Cloud Engineer | MERN Developer | AI Enthusiast
+
+GitHub:
+[https://github.com/YOUR_USERNAME](https://github.com/ashutosh-mohanty05)
+
+LinkedIn:
+[https://linkedin.com/in/YOUR_LINKEDIN](https://www.linkedin.com/in/ashutosh-mohanty-674392217/)
+
+---
+
+# ⭐ Support
+
+If you like this project,
+
+⭐ Star the repository
+
+🍴 Fork it
+
+📢 Share it with others
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.

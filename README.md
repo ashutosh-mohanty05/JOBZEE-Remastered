@@ -217,30 +217,9 @@ Deploy on
 
 ---
 
-# 📸 Screenshots
-
-Add screenshots here.
-
-```
-Home Page
-
-Login
-
-Dashboard
-
-Employer Panel
-
-AI Assistant
-
-Job Listings
-```
-
----
-
 # Future Improvements
 
 - Resume Parsing
-- AI Resume Score
 - Interview Preparation
 - Job Recommendation Engine
 - Resume Builder
@@ -284,10 +263,10 @@ git push origin feature-name
 AWS Cloud Engineer | MERN Developer | AI Enthusiast
 
 GitHub:
-[https://github.com/YOUR_USERNAME](https://github.com/ashutosh-mohanty05)
+[(https://github.com/ashutosh-mohanty05)]
 
 LinkedIn:
-[https://linkedin.com/in/YOUR_LINKEDIN](https://www.linkedin.com/in/ashutosh-mohanty-674392217/)
+[(https://www.linkedin.com/in/ashutosh-mohanty-674392217/)]
 
 ---
 
